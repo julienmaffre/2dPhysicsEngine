@@ -1,19 +1,22 @@
-#ifndef DECOR_H
-#define DECOR_H
+#ifndef STATICSCENERY_H
+#define STATICSCENERY_H
 
 #include <QGraphicsItem>
 #include <QPainter>
 #include <QColor>
 #include <iostream>
 
-#include "Thing.h"
+#include "physicsengine/Object2d.h"
 
-class Decor : public Thing
+class StaticScenery : public Object2d
 {
 public:
-    Decor(QRectF rect);
+    StaticScenery(QRectF rect);
 
     void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget);
+
+    void setPosX(const qreal &value);
+    void setPosY(const qreal &value);
 
     void setVelocityX(const qreal &value);
     void setVelocityY(const qreal &value);
@@ -26,4 +29,4 @@ private:
     qreal height;
 };
 
-#endif // DECOR_H
+#endif // STATICSCENERY_H

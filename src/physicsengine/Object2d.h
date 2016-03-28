@@ -1,15 +1,18 @@
-#ifndef THING_H
-#define THING_H
+#ifndef OBJECT2D_H
+#define OBJECT2D_H
 
 #include <QGraphicsItem>
 
-class Thing : public QGraphicsRectItem
+class Object2d : public QGraphicsRectItem
 {
 public:
-    Thing(QRectF rectangle, qreal weight, qreal elasticity, qreal velocity_x, qreal velocity_y, qreal acceleration);
+    Object2d(QRectF rectangle, qreal weight, qreal elasticity, qreal velocity_x, qreal velocity_y, qreal acceleration);
 
     qreal getInvWeight() const;
     qreal getWeight() const;
+
+    virtual void setPosX(const qreal &value);
+    virtual void setPosY(const qreal &value);
 
     qreal getVelocityX() const;
     qreal getVelocityY() const;
@@ -33,4 +36,4 @@ protected:
     qreal elasticity;
 };
 
-#endif // THING_H
+#endif // OBJECT2D_H
